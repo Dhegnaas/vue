@@ -1,6 +1,5 @@
 .<template>
-  <h1>waa kuu fadhisaa libaax</h1>
-  <h2>soo dhawaaw</h2>
+<h1>waa dhaashboard</h1>
 </template>
 
 <script>

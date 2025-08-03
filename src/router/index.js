@@ -1,34 +1,34 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import test from '../components/tests.vue'
-import baroobo from '@/components/baroobo.vue'
-import iskuday from '@/components/iskuday.vue'
-import markale from '@/components/markale.vue'
-import ninweyn from '@/components/ninweyn.vue'
+import Dhashboard from '../components/Dhashboard.vue'
+import Customers from '@/components/Customers.vue'
+import Sales from '@/components/Sales.vue'
+import Products from '@/components/Products.vue'
+import Create from '@/components/Create.vue'
 const routes = [
   {
-    path: '/test',
-    name: 'test',
-    component: test
+    path: '/Dhashboard',
+    name: 'Dhashboard',
+    component: Dhashboard
   },
     {
-    path: '/baroobo',
-    name: 'baroobo',
-    component: baroobo
+    path: '/Customers',
+    name: 'Customers',
+    component: Customers
   },
       {
-    path: '/iskuday',
-    name: 'iskuday',
-    component: iskuday
+    path: '/Sales',
+    name: 'Sales',
+    component: Sales
   },
         {
-    path: '/markale',
-    name: 'markale',
-    component: markale
+    path: '/Products',
+    name: 'Products',
+    component: Products
   },
         {
-    path: '/ninweyn',
-    name: 'ninweyn',
-    component: ninweyn
+    path: '/Create',
+    name: 'Create',
+    component: Create
   },
 ]
 

@@ -1,10 +1,11 @@
 .<template>
-  <div>tani waa talaabadeydA Koowad</div>
+  <Create/>
 </template>
 
 <script>
+import Create from '@/components/Create.vue';
 export default {
-
+components:{Create}
 }
 </script>
 

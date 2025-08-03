@@ -1,11 +1,9 @@
 .<template>
-  <markale/>
+  <h1>waa create users libaax</h1>
 </template>
 
 <script>
-import markale from '@/components/markale.vue';
 export default {
-components:markale
 
 }
 </script>

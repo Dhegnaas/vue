@@ -1,12 +1,12 @@
 .<template>
-  <baroobo/>
+  <Customers/>
 </template>
 
 <script>
-import baroobo from '@/components/baroobo.vue';
+import Customers from '@/components/Customers.vue';
 export default {
     components:{
-        baroobo
+        Customers
     }
 
 }

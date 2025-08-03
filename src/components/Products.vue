@@ -1,5 +1,5 @@
 .<template>
-  <h1>welcome</h1>
+  <h1>waa products</h1>
 </template>
 
 <script>

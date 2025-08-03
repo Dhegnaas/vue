@@ -1,5 +1,5 @@
 .<template>
-  <h1>soo dhawaaw shiiq</h1>
+<h1>waa Customers</h1>
 </template>
 
 <script>
