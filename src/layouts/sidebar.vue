@@ -33,10 +33,10 @@
         Products
       </router-link>
       <router-link
-        to="/Create"
+        to="/users"
         class="text-white px-3 py-2 rounded hover:bg-blue-800 transition duration-200"
       >
-        Create
+        users
       </router-link>
     </nav>
   </aside>
