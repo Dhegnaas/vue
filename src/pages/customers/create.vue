@@ -32,7 +32,8 @@
 
 <script setup>
 import { ref } from 'vue'
-import apiClient from '../../apiClient'
+import apiClient from '@/apiClient'
+import { useRouter } from 'vue-router'
 
 const form = ref({
   name: '',
@@ -41,13 +42,15 @@ const form = ref({
   address: '',
 })
 
+const router = useRouter()
+
 const createCustomer = async () => {
   try {
     await apiClient.post('/customers', form.value)
     alert('Customer created successfully!')
-    form.value = { name: '', email: '', phone: '', address: '' }
+    router.push('/customers')
   } catch (err) {
-    alert('Something went wrong: ' + (err.response?.data?.error || err.message))
+    alert('Something went wrong: ' + (err.response?.data?.message || err.message))
   }
 }
 </script>

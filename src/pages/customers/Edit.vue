@@ -36,10 +36,11 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
-import apiClient from '../../apiClient'
+import apiClient from '@/apiClient'
+import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
+const router = useRouter()
 const id = route.params.id
 
 const form = ref({
@@ -64,8 +65,9 @@ const updateCustomer = async () => {
   try {
     await apiClient.put(`/customers/${id}`, form.value)
     message.value = 'Customer updated successfully!'
+    setTimeout(() => router.push('/customers'), 1000)
   } catch (err) {
-    message.value = err.response?.data?.error || 'Something went wrong'
+    message.value = err.response?.data?.message || 'Something went wrong'
   }
 }
 </script>
