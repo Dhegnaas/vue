@@ -32,7 +32,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import axios from 'axios'
+import apiClient from '../../apiClient'
 
 const form = ref({
   name: '',
@@ -43,7 +43,7 @@ const form = ref({
 
 const createCustomer = async () => {
   try {
-    await axios.post('http://localhost:8000/api/customers', form.value)
+    await apiClient.post('/customers', form.value)
     alert('Customer created successfully!')
     form.value = { name: '', email: '', phone: '', address: '' }
   } catch (err) {

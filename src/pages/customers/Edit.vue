@@ -36,8 +36,8 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import axios from 'axios'
 import { useRoute } from 'vue-router'
+import apiClient from '../../apiClient'
 
 const route = useRoute()
 const id = route.params.id
@@ -53,7 +53,7 @@ const message = ref('')
 
 onMounted(async () => {
   try {
-    const res = await axios.get(`http://localhost:8000/api/customers/${id}`)
+    const res = await apiClient.get(`/customers/${id}`)
     form.value = res.data
   } catch (err) {
     message.value = 'Failed to load customer data'
@@ -62,7 +62,7 @@ onMounted(async () => {
 
 const updateCustomer = async () => {
   try {
-    await axios.put(`http://localhost:8000/api/customers/${id}`, form.value)
+    await apiClient.put(`/customers/${id}`, form.value)
     message.value = 'Customer updated successfully!'
   } catch (err) {
     message.value = err.response?.data?.error || 'Something went wrong'
