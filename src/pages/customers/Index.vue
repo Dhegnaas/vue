@@ -47,13 +47,13 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import axios from 'axios'
+import apiClient from '../../apiClient'
 
 const customers = ref([])
 
 const loadCustomers = async () => {
   try {
-    const res = await axios.get('http://localhost:8000/api/customers')
+    const res = await apiClient.get('/customers')
     customers.value = res.data
   } catch (error) {
     console.error('Failed to load customers', error)
@@ -63,7 +63,7 @@ const loadCustomers = async () => {
 const deleteCustomer = async (id) => {
   if (confirm('Are you sure you want to delete this customer?')) {
     try {
-      await axios.delete(`http://localhost:8000/api/customers/${id}`)
+      await apiClient.delete(`/customers/${id}`)
       customers.value = customers.value.filter(c => c.id !== id)
     } catch (error) {
       alert('Failed to delete customer.')
