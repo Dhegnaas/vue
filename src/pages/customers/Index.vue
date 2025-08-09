@@ -47,7 +47,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import apiClient from '../../apiClient'
+import apiClient from '@/apiClient'
 
 const customers = ref([])
 
